@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Task Management</title>
+  <link rel="stylesheet" href="createtask.css">
+</head>
+<body>
+
+  <header>
+    <h1>Project Task Management</h1>
+  </header>
+  <div class="container">
+    <form id="create-task-form">
+      <h2>Create Task</h2>
+      <label for="task-name">Task Name:</label>
+      <input type="text" id="task-name" required>
+
+      <label for="task-description">Task Description:</label>
+      <textarea id="task-description" rows="4"></textarea>
+
+      <label for="assignee">Assignee:</label>
+      <input type="text" id="assignee" required>
+
+      <br><br>
+      <button class="button" type="submit">Create Task</button>
+      <div id="create-task-message"></div>
+    </form>
+    <h2>Task List</h2>
+    <ul class="task-list">
+      <li class="task-item">
+        <div class="task-title">Task 1</div>
+        <div class="task-title">E-Commerce Website</div>
+        <div class="task-description">Successful completion of Asterisc Technocrat, a cutting-edge e-commerce website that is set to redefine the world of online shopping!</div>
+        <div class="task-progress">Progress: 100%</div>
+      </li>
+      <li class="task-item">
+        <div class="task-title">Task 2</div>
+        <div class="task-title">Portfolio Website</div>
+        <div class="task-description">Successfully crafted an engaging online Portfolio Website to showcase my skills, projects, and experiences.</div>
+        <div class="task-progress">Progress: 100%</div>
+      </li>
+    </ul>
+    <form id="update-progress-form">
+      <h2>Update Task Progress</h2>
+      <label for="task-progress">Task Progress:</label>
+      <input type="text" id="task-progress" required>
+
+      <br><br>
+      <button class="button" type="submit">Update Progress</button>
+      <div id="update-progress-message"></div>
+    </form>
+    <h2>Notifications</h2>
+    <div id="notifications">
+    </div>
+  </div>
+  <script>
+    
+    function displayNotification(message) {
+      var notificationElement = document.createElement('div');
+      notificationElement.textContent = message;
+
+      var notificationsContainer = document.getElementById('notifications');
+      notificationsContainer.appendChild(notificationElement);
+      
+      setTimeout(function() {
+        notificationsContainer.removeChild(notificationElement);
+      }, 3000); 
+    }
+
+    
+    function handleTaskItemClick(event) {
+      
+      var selectedTaskItem = document.querySelector('.task-item.selected');
+      if (selectedTaskItem) {
+        selectedTaskItem.classList.remove('selected');
+      }
+
+      var taskItem = event.currentTarget;
+      taskItem.classList.add('selected');
+    }
+
+    var taskItems = document.querySelectorAll('.task-item');
+    taskItems.forEach(function(taskItem) {
+      taskItem.addEventListener('click', handleTaskItemClick);
+    });
+
+    
+    document.getElementById('create-task-form').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      var taskName = document.getElementById('task-name').value;
+      var taskDescription = document.getElementById('task-description').value;
+      var assignee = document.getElementById('assignee').value;
+
+      var taskItem = document.createElement('li');
+      taskItem.classList.add('task-item');
+
+    
+      var taskTitle = document.createElement('div');
+      taskTitle.classList.add('task-title');
+      taskTitle.textContent = taskName;
+
+      var taskSubtitle = document.createElement('div');
+      taskSubtitle.classList.add('task-title');
+      taskSubtitle.textContent = assignee;
+
+      var taskDescriptionElement = document.createElement('div');
+      taskDescriptionElement.classList.add('task-description');
+      taskDescriptionElement.textContent = taskDescription;
+
+      var taskStatus = document.createElement('div');
+      taskStatus.classList.add('task-status');
+      taskStatus.textContent = 'Status: In Progress';
+
+     
+      taskItem.appendChild(taskTitle);
+      taskItem.appendChild(taskSubtitle);
+      taskItem.appendChild(taskDescriptionElement);
+      taskItem.appendChild(taskStatus);
+
+     
+      var taskList = document.querySelector('.task-list');
+      taskList.appendChild(taskItem);
+
+
+      document.getElementById('task-name').value = '';
+      document.getElementById('task-description').value = '';
+      document.getElementById('assignee').value = '';
+
+      console.log('Create Task form submitted');
+      document.getElementById('create-task-message').textContent = 'Task created!';
+      displayNotification('Task created successfully!');
+    });
+
+    document.getElementById('update-progress-form').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+     
+      var taskProgress = document.getElementById('task-progress').value;
+
+      var taskItem = document.querySelector('.task-item.selected');
+
+      if (taskItem) {
+        
+        var progressElement = taskItem.querySelector('.task-progress');
+        progressElement.textContent = 'Progress: ' + taskProgress;
+
+        
+        taskItem.classList.remove('selected');
+
+        console.log('Update Progress form submitted');
+        document.getElementById('update-progress-message').textContent = 'Progress updated!';
+        displayNotification('Progress updated successfully!');
+      }
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Website</title>
+  <link rel="stylesheet" type="text/css" href="E.css">
+  <style>
+    header {
+      text-align: center;
+    }
+    
+    h3 {
+      color: black;
+    }
+    .welcome-message {
+      font-size: 48px;
+      margin-top: 200px;
+      font-family: 'Arial', sans-serif;
+    }
+    .marquee-text {
+      display: inline-block;
+      vertical-align: top;
+      margin-top: -190px;
+      animation: marquee 10s infinite linear;
+    }
+    .details {
+		text-align: center;
+		margin: 50px auto;
+		max-width: 600px;
+		vertical-align: top;
+		margin-top: -160px;
+		display: flex; 
+		align-items: center; 
+		justify-content: flex-end; 
+		margin-right: 100px; 
+  }
+    .details img {
+	 vertical-align: top;
+	 margin-top: -30px;
+      width: 550px; 
+      height: 550px; 
+      margin-right: 20px;
+      margin-left: -700px;
+    }
+
+    .details-text {
+	 vertical-align: top;
+	 margin-top: -100px;
+      text-align: justify;
+      flex: 6;
+    }
+    .details h2 {
+      font-size: 24px;
+      color: #333;
+    }
+    .details p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    footer {
+      text-align: center;
+      background-color: black;
+      color: white;
+      padding: 10px 0;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>E-commerce Website</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="welcome-message">
+    <span class="marquee-text">Welcome to E-Commerce website!</span>
+  </div>
+
+  <div class="details">
+    <img src="ecommerce.jpg" alt="E-commerce Image">
+    <div class="details-text">
+      <h2>About Our Website</h2>
+      <p style="color: black;">Welcome to our e-commerce website! Discover a wide range of high-quality products, from trendy fashion to cutting-edge electronics and stylish home decor. Enjoy a seamless shopping experience with secure payments and swift delivery. Stay updated with exclusive deals and friendly customer support. Start your online shopping journey today!</p>
+      <p style="color: black;">At our online store, we pride ourselves on offering a wide range of high-quality products to cater to your every need. Whether you're looking for trendy fashion apparel, cutting-edge electronics, or innovative home decor, we have it all.  Indulge in the joy of browsing, discovering, and bringing your shopping fantasies to life. Start exploring our website and let the magic of e-commerce unfold before your eyes.</p>
+    </div>
+  </div>
+  <footer>&copy; 2023 E-commerce Website. All rights reserved.</footer>
+</body>
+</html>

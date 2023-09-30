@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6e5e5;
+  background-image: url("ee.jpg");
+  color: #f88b8b;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #ed6666;
+  color: #fff;
+  padding: 20px;
+}
+header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+section {
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px; 
+}
+label {
+  margin-bottom: 5px;
+}
+input, select {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #555;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: bottom;
+  padding: 10px;
+}

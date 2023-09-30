@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <header>
+    <h1>Project Task Management</h1>
+  </header>
+  <link rel="stylesheet" href="./signup.css">
+</head>
+  <div class="container">
+    <form id="signup-form">
+      <h2>Sign Up</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+
+      <br><br>
+      <button class="button" type="submit">Sign Up</button>
+      <div id="signup-message"></div>
+    </form>
+  </div>
+
+  <script>
+    
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      
+      console.log('Sign Up form submitted');
+      document.getElementById('signup-message').textContent = 'Sign Up successful!';
+    });
+  </script>
+</body>
+</html>

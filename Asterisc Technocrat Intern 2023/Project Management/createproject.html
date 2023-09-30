@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Task Management</title>
+  <link rel="stylesheet" href="createproject.css">
+</head>
+<body>
+
+  <div class="container">
+    <form id="create-project-form">
+      <h2>Create Project</h2>
+      <label for="project-name">Project Name:</label>
+      <input type="text" id="project-name" required>
+
+      <label for="project-description">Project Description:</label>
+      <textarea id="project-description" rows="4"></textarea>
+
+      <br><br>
+      <button class="button" type="submit">Create Project</button>
+      <div id="create-project-message"></div>
+    </form>
+  </div>
+
+  <script>
+   
+    document.getElementById('create-project-form').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      var projectName = document.getElementById('project-name').value;
+      var projectDescription = document.getElementById('project-description').value;
+      
+      console.log('Create Project form submitted');
+      document.getElementById('create-project-message').textContent = 'Project created!';
+    });
+  </script>
+</body>
+</html>

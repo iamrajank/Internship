@@ -1,0 +1,123 @@
+<style>
+   body{
+   background-image: url("c11.jpg");
+   }
+   
+  .container {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .left-side {
+    flex-basis: 60%;
+  }
+  .right-side {
+    flex-basis: 35%;
+  }
+  h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+	color:white;
+  }
+  p {
+    line-height: 1.5;
+	color:white;
+	font-size:20px;
+  }
+  form {
+    background-color: #f7f7f7;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+
+<div class="container">
+  <div class="left-side">
+    <h1>Contact Us</h1>
+    <p>
+      Thank you for visiting our website. If you have any questions or feedback, please feel free to contact us using the form on the right side. We would love to hear from you!
+    </p>
+  </div>
+
+  <div class="right-side">
+    <form action="submit" method="post" onsubmit="validateContact(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="2" required></textarea>
+
+      <input type="submit" value="Submit">
+     <div class="form-group error-message" id="error-message" style="display: none;">
+        Invalid username or password.
+      </div>
+      <div class="form-group success-message" id="register-success" style="display: none;">
+        Message Sent!
+      </div>
+    </form>
+  </div>
+<script>
+  function validateContact(event) {
+    event.preventDefault();
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+    var errorMessage = document.getElementById('error-message');
+    var successMessage = document.getElementById('register-success');
+    var rightSide = document.getElementById('right-side');
+
+    if (name === 'text' && email === 'abc@gmail.com' && message === 'text') {
+      errorMessage.style.display = 'none';
+      successMessage.style.display = 'block';
+      rightSide.style.display = 'block';
+    } else {
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'block';
+      rightSide.style.display = 'none';
+    }
+  }
+</script>
