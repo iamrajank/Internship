@@ -129,20 +129,4 @@ A full list of the currently supported units is below.
 * mps
 * fps
 
-## See also
 
-"Units" is part of the [**tiny tools**](https://dohliam.github.io/tiny_tools/) series, a collection of small mobile-friendly JavaScript tools for performing common tasks in the browser.
-
-Other tools for working with numbers and units that might also be of interest:
-
-* [Compare prices](https://github.com/dohliam/compare-prices)
-* [Currency table](https://github.com/dohliam/currency-table)
-
-## Credits
-
-* [Milligram](https://github.com/milligram/milligram) CSS by @cjpatoilo, prototyped using [dropin-minimal-css](https://github.com/dohliam/dropin-minimal-css)
-* [github-corners](https://github.com/tholman/github-corners) by @tholman
-
-## License 
-
-MIT.
